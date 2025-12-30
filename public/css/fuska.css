@@ -1,0 +1,1019 @@
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(52, 152, 219, 0.3);
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-text {
+    margin-top: 20px;
+    color: #3498db;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.bzs-topbar img { display:inline-block; }
+.bzs-row { gap: 12px; }
+.bzs-thumb { background:#fff; border:1px solid #eee; }
+.bzs-row {
+    position: relative;
+}
+
+.bzs-actions {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 26px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-top: none;
+    padding: 3px 10px;
+    gap: 10px;
+    font-size: 0.75rem;
+    color: #555;
+    z-index: 10;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.bzs-row:hover .bzs-actions {
+    display: flex;
+    align-items: center;
+}
+
+.bzs-actions span {
+    cursor: pointer;
+}
+
+.bzs-actions span:hover {
+    text-decoration: underline;
+}
+.maincontent {
+    width: 100%;
+}
+
+/* Верхняя строка — заголовки колонок */
+.inzeratyflex {
+    display: grid;
+    grid-template-columns: 1fr 100px 100px 50px; /* ← основное изменение */
+    gap: 10px;
+    align-items: flex-start;
+}
+/* Немного уменьшим отступы, чтобы тексту было больше места */
+.listainzerat {
+    border-bottom: 1px solid #ddd;
+    padding: 6px 4px;
+    font-size: 0.9rem;
+}
+.inzeratywrapper {
+    padding: 10px 0 4px;
+    background-color: #fff;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.inzeratywrapper :hover {
+    background-color: #bbbbbb; /* светло-серый фон при ховере */
+}
+
+.inzeratynadpis .obrazek {
+    float: left;
+    margin-right: 10px;
+}
+
+.inzeratynadpis .nadpis {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.inzeratynadpis .popis {
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.3;
+}
+
+.inzeratycena,
+.inzeratylok,
+.inzeratyview {
+    font-size: 0.85rem;
+    text-align: right; /* ← выравниваем вправо */
+}
+
+.inzeratyakce {
+    grid-column: 1 / -1;
+    font-size: 0.7rem;
+    margin-top: 4px;
+}
+
+.inzeratyakce .akce {
+    margin-right: 8px;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.inzeratyakce .akce:hover {
+    text-decoration: underline;
+}
+
+.page-link svg {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+html {
+    scroll-behavior: smooth; /* плавный скролл для всех переходов */
+}
+
+.to-top-btn {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 9999px;
+    background: #0d6efd;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
+    z-index: 9999;
+}
+
+.to-top-btn:hover {
+    background: #0b5ed7;
+    transform: translateY(-2px);
+}
+.ztop {
+    color: #d9534f; /* красный, как на Bazoš */
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    background-color: #ffeaea;
+    border-radius: 3px;
+    padding: 1px 4px;
+}
+/* десктопная сетка как была */
+.inzeratyflex {
+    display: grid;
+    grid-template-columns: 1fr 130px 130px 100px;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+/* бывает, что картинка прижата — дадим отступ сверху */
+.inzeratynadpis .obrazek {
+    float: left;
+    margin-right: 10px;
+}
+
+/* мобилка */
+@media (max-width: 768px) {
+    .inzeratyflex {
+        display: block;              /* всё в один столбец */
+    }
+
+    .inzeratynadpis {
+        overflow: hidden;
+    }
+
+    .inzeratynadpis .obrazek {
+        float: none;
+        width: 100%;
+        height: auto;
+        max-height: 220px;
+        object-fit: cover;
+        margin: 0 0 8px 0;
+        border-radius: 4px;
+    }
+
+    /* правая часть вниз и в строку */
+    .inzeraty-right {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+        font-size: .85rem;
+        color: #555;
+    }
+
+    .inzeratycena,
+    .inzeratylok,
+    .inzeratyview {
+        text-align: left;
+    }
+
+    .inzeraty {
+        padding: 10px 0;
+    }
+
+    .nadpis {
+        font-size: 1rem;
+    }
+
+    .popis {
+        margin-top: 4px;
+        font-size: .85rem;
+    }
+}
+/* фон поверх страницы */
+.mobile-cat-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.35);
+    z-index: 1050;
+    display: none;
+}
+
+/* сама панель слева */
+.mobile-cat-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 78%;
+    max-width: 280px;
+    height: 100%;
+    background: #fff;
+    padding: 16px;
+    box-shadow: 2px 0 10px rgba(0,0,0,.15);
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+    overflow-y: auto;
+}
+
+/* когда открыто */
+.mobile-cat-overlay.show {
+    display: block;
+}
+
+.mobile-cat-overlay.show .mobile-cat-panel {
+    transform: translateX(0);
+}
+@media (max-width: 768px) {
+    .bzs-sidebar {
+        display: none !important;
+    }
+}
+.jobs-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 12px;
+}
+
+.job-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 240px;
+}
+
+.job-card-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.job-card-body {
+    padding: 8px 10px 10px;
+}
+
+.job-card-title {
+    font-size: 0.9rem;
+}
+
+.job-card-meta {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.job-card-price {
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* на мобилке показываем сразу галерею */
+@media (max-width: 768px) {
+    #jobsList {
+        display: none !important;
+    }
+    #jobsGallery {
+        display: block !important;
+    }
+}
+.view-toggle {
+    opacity: 0.5;
+    transition: opacity .2s;
+}
+.view-toggle:hover,
+.view-toggle.active {
+    opacity: 1;
+    color: #007bff;
+}
+@media (max-width: 767.98px) {
+    .listainzerat {
+        display: none !important;
+    }
+}
+/* overlay */
+.mobile-filter-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.35);
+    z-index: 1050;
+    display: none;
+}
+
+/* панель справа */
+.mobile-filter-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    max-width: 320px;
+    height: 100%;
+    background: #fff;
+    padding: 16px;
+    box-shadow: -2px 0 10px rgba(0,0,0,.15);
+    transform: translateX(100%);
+    transition: transform .25s ease;
+    overflow-y: auto;
+}
+
+/* видимо */
+.mobile-filter-overlay.show {
+    display: block;
+}
+.mobile-filter-overlay.show .mobile-filter-panel {
+    transform: translateX(0);
+}
+@media (max-width: 767.98px) {
+    .container .fs-5 i {
+        font-size: 1.25rem;
+    }
+}
+     /* 🔥 FIREFOX FIXES FOR SLICK SLIDER */
+
+     /* Основной слайдер - сброс размеров */
+ .job-main-slider .slick-list,
+ .job-main-slider .slick-track {
+     width: 100% !important;
+     transform: translate3d(0, 0, 0) !important;
+ }
+
+.job-main-slider .slick-slide {
+    width: 100% !important;
+    float: none !important;
+    display: block !important;
+    min-width: 100% !important;
+}
+
+.job-main-slider .slick-slide > div {
+    width: 100% !important;
+}
+
+.main-slide-image {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Слайдер миниатюр */
+.job-thumb-slider .slick-slide {
+    margin: 0 4px;
+    width: 100px !important;
+}
+
+.job-thumb-slider .slick-slide img {
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100% !important;
+    height: 80px !important;
+    object-fit: cover !important;
+}
+
+/* Специфичные фиксы для Firefox */
+@-moz-document url-prefix() {
+    .job-main-slider .slick-slide {
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .job-thumb-slider .slick-slide {
+        width: 100px !important;
+        min-width: 100px !important;
+        flex-shrink: 0;
+    }
+
+    .slick-track {
+        display: flex !important;
+        align-items: center;
+    }
+
+    .job-main-slider .slick-list {
+        overflow: hidden;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .job-slider-wrapper {
+        max-width: 100% !important;
+    }
+
+    .job-thumb-slider .slick-slide {
+        width: 80px !important;
+    }
+
+    .job-main-slider .slick-prev {
+        left: 10px;
+        z-index: 1;
+    }
+
+    .job-main-slider .slick-next {
+        right: 10px;
+        z-index: 1;
+    }
+}
+
+/* Полноэкранный слайдер */
+#fullscreen-slider-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.95);
+    z-index: 1050;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.fullscreen-slider {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.fullscreen-slider .slick-slide {
+    text-align: center;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.fullscreen-slider img {
+    max-height: 80vh;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Сделаем стрелки видимыми */
+.fullscreen-slider .slick-prev,
+.fullscreen-slider .slick-next {
+    z-index: 1060;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.fullscreen-slider .slick-prev {
+    left: -45px;
+}
+
+.fullscreen-slider .slick-next {
+    right: -45px;
+}
+
+/* ❌ Скрыть стрелки на экранах < 768px */
+@media (max-width: 767.98px) {
+    .fullscreen-slider .slick-prev,
+    .fullscreen-slider .slick-next {
+        display: none !important;
+    }
+}
+
+/* Остальные стили */
+.kontaktniformular {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.oranzovy {
+    background: #fff4e5;
+    border: 1px solid #ffc107;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.textpridat {
+    width: 100%;
+    min-height: 100px;
+}
+
+.listainzerat.inzeratyflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.nadpisdetail {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.ztop {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.inzeratydetdel a {
+    font-size: 0.875rem;
+}
+
+.job-meta {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.job-contact,
+.job-actions {
+    flex: 1;
+    min-width: 280px;
+}
+
+@media (max-width: 768px) {
+    .job-contact {
+        order: 2;
+    }
+    .job-actions {
+        order: 1;
+    }
+}
+.inzeraty-wrapper { position: relative;}
+.inzeratyupdatedel {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+    margin-top: 6px;
+}
+.inzeraty-wrapper:hover .inzeratyupdatedel {
+    opacity: 1;
+    pointer-events: auto;
+}
+.inzeraty-wrapper:hover .inzeratyflex  {
+    background-color: #bbbbbb;
+    transition: background-color 0.2s ease-in-out;
+}
+.chat-list-error {
+    padding: 20px;
+    text-align: center;
+    color: #dc3545;
+    background: #f8d7da;
+    border-radius: 8px;
+    margin: 10px;
+}
+/* Стили для синхронизированных слайдеров */
+.slider-for {
+    margin-bottom: 10px;
+}
+
+.slider-nav {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.slider-nav .slick-slide {
+    padding: 0 5px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.slider-nav .slick-slide.slick-current {
+    opacity: 1;
+}
+
+.slider-nav .slick-center {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.thumb-image {
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.slider-nav .slick-current .thumb-image,
+.slider-nav .slick-center .thumb-image {
+    border-color: #007bff;
+}
+
+/* Стили для полноэкранного модала */
+.fullscreen-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1050;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1051;
+    font-size: 16px;
+}
+
+.fullscreen-slider {
+    width: 90%;
+    max-width: 1000px;
+}
+
+/* Стили для стрелок */
+/* ЧИСТЫЕ БЕЛЫЕ СТРЕЛКИ БЕЗ ФОНА И ОБОДКОВ */
+
+/* Основной слайдер */
+.slider-for .slick-prev,
+.slider-for .slick-next {
+    background: transparent !important;
+    border: none !important;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    color: #333; /* Темный цвет для основного слайдера */
+}
+
+.slider-for .slick-prev:hover,
+.slider-for .slick-next:hover {
+    background: transparent !important;
+    color: #000; /* Чуть темнее при ховере */
+}
+
+.slider-for .slick-prev {
+    left: -50px;
+}
+
+.slider-for .slick-next {
+    right: -50px;
+}
+
+/* Слайдер миниатюр */
+.slider-nav .slick-prev,
+.slider-nav .slick-next {
+    background: transparent !important;
+    border: none !important;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    color: #333; /* Темный цвет для миниатюр */
+}
+
+.slider-nav .slick-prev:hover,
+.slider-nav .slick-next:hover {
+    background: transparent !important;
+    color: #000;
+}
+
+.slider-nav .slick-prev {
+    left: -40px;
+}
+
+.slider-nav .slick-next {
+    right: -40px;
+}
+
+/* Полноэкранный слайдер */
+.fullscreen-slider .slick-prev,
+.fullscreen-slider .slick-next {
+    background: transparent !important;
+    border: none !important;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    color: white; /* Белый цвет для полноэкранного режима */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+
+.fullscreen-slider .slick-prev {
+    left: 20px;
+}
+
+.fullscreen-slider .slick-next {
+    right: 20px;
+}
+
+/* Стили для SVG иконок */
+.slick-prev svg,
+.slick-next svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor; /* Наследует цвет от родителя */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .slider-for .slick-prev {
+        left: 10px;
+    }
+
+    .slider-for .slick-next {
+        right: 10px;
+    }
+
+    .slider-nav .slick-prev {
+        left: -30px;
+    }
+
+    .slider-nav .slick-next {
+        right: -30px;
+    }
+
+    .fullscreen-slider .slick-prev,
+    .fullscreen-slider .slick-next {
+        width: 40px;
+        height: 40px;
+    }
+
+    .fullscreen-slider .slick-prev {
+        left: 10px;
+    }
+
+    .fullscreen-slider .slick-next {
+        right: 10px;
+    }
+}
+
+/* Убираем стандартные стили Slick */
+.slick-prev:before,
+.slick-next:before {
+    display: none !important;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .slider-nav {
+        max-width: 300px;
+    }
+
+    .slick-prev {
+        left: 10px;
+    }
+
+    .slick-next {
+        right: 10px;
+    }
+
+    .fullscreen-slider {
+        width: 95%;
+    }
+
+    .fullscreen-close-btn {
+        top: 10px;
+        right: 10px;
+    }
+}
+/* Вариант с сохранением соотношения сторон */
+.slider-for .main-image {
+    width: 100%;
+    aspect-ratio: 4/3; /* Соотношение 4:3 */
+    object-fit: contain;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.slider-nav .thumb-image {
+    width: 100%;
+    aspect-ratio: 1; /* Квадратные миниатюры */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Фолбэк для старых браузеров */
+@supports not (aspect-ratio: 1) {
+    .slider-for .main-image {
+        height: 400px;
+    }
+    .slider-nav .thumb-image {
+        height: 80px;
+    }
+}
+/* СТИЛИ ДЛЯ ВЕРТИКАЛЬНЫХ МИНИАТЮР */
+
+.slider-with-vertical-thumbs {
+    display: flex;
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.main-slider-container {
+    flex: 1;
+    max-width: 700px;
+}
+
+.vertical-thumbs-container {
+    width: 100px;
+    flex-shrink: 0;
+}
+
+/* Основной слайдер */
+.slider-for .main-image {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Вертикальный слайдер миниатюр */
+.slider-nav-vertical {
+    height: 500px;
+    overflow: hidden;
+}
+
+.slider-nav-vertical .slick-list {
+    height: 100% !important;
+}
+
+.slider-nav-vertical .slick-track {
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+}
+
+.slider-nav-vertical .thumb-slide-vertical {
+    margin-bottom: 10px;
+    height: auto !important;
+}
+
+.slider-nav-vertical .thumb-image-vertical {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-nav-vertical .slick-current .thumb-image-vertical {
+    border-color: #007bff;
+    transform: scale(1.05);
+}
+
+.slider-nav-vertical .thumb-image-vertical:hover {
+    border-color: #0056b3;
+}
+
+/* Стрелки для вертикального слайдера */
+.slider-nav-vertical .slick-prev,
+.slider-nav-vertical .slick-next {
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    height: 25px;
+    z-index: 2;
+}
+
+.slider-nav-vertical .slick-prev {
+    top: -30px;
+}
+
+.slider-nav-vertical .slick-prev:before {
+    content: "↑";
+}
+
+.slider-nav-vertical .slick-next {
+    top: auto;
+    bottom: -30px;
+}
+
+.slider-nav-vertical .slick-next:before {
+    content: "↓";
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .slider-with-vertical-thumbs {
+        flex-direction: column;
+    }
+
+    .vertical-thumbs-container {
+        width: 100%;
+        height: 100px;
+    }
+
+    .slider-nav-vertical {
+        height: 100px;
+    }
+
+    .slider-nav-vertical .slick-track {
+        flex-direction: row;
+    }
+
+    .slider-nav-vertical .thumb-slide-vertical {
+        margin-bottom: 0;
+        margin-right: 10px;
+        height: 100% !important;
+    }
+
+    .slider-nav-vertical .thumb-image-vertical {
+        height: 80px;
+        width: 80px;
+    }
+
+    .slider-nav-vertical .slick-prev,
+    .slider-nav-vertical .slick-next {
+        left: auto;
+        transform: none;
+    }
+
+    .slider-nav-vertical .slick-prev {
+        top: 50%;
+        left: -35px;
+        transform: translateY(-50%);
+    }
+
+    .slider-nav-vertical .slick-prev:before {
+        content: "←";
+    }
+
+    .slider-nav-vertical .slick-next {
+        top: 50%;
+        right: -35px;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+
+    .slider-nav-vertical .slick-next:before {
+        content: "→";
+    }
+}

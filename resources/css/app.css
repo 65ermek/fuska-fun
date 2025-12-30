@@ -1,0 +1,53 @@
+/* Верх */
+.bzs-header .form-control-sm, .bzs-header .form-select-sm { height: 32px; }
+.bzs-cats .bzs-cat-link {
+    padding: 4px 10px; border:1px solid #e5e7eb; border-radius:4px; text-decoration:none; color:#333;
+}
+.bzs-cats .bzs-cat-link.active, .bzs-cats .bzs-cat-link:hover {
+    background:#f1f5ff; border-color:#cfe0ff; color:#0d6efd;
+}
+
+/* Полоса фильтров */
+.bzs-filterbar .form-control-sm, .bzs-filterbar .form-select-sm { height: 32px; }
+.bzs-filterbar .btn { height: 32px; padding: 3px 10px; }
+
+/* Листинг */
+.bzs-list { border:1px solid #eee; border-radius:6px; overflow:hidden; }
+.bzs-row {
+    display:flex; gap:12px; align-items:center;
+    padding:10px 12px; text-decoration:none; color:inherit; border-bottom:1px solid #f2f2f2;
+}
+.bzs-row:hover { background:#fafcff; }
+.bzs-row:last-child { border-bottom:none; }
+.bzs-thumb { width:80px; height:60px; flex:0 0 80px; border:1px solid #eee; background:#fff; display:flex; align-items:center; justify-content:center; }
+.bzs-thumb img { max-width:100%; max-height:100%; object-fit:cover; }
+.bzs-body { flex:1 1 auto; min-width:0; }
+.bzs-title { font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.bzs-meta { color:#666; font-size:0.9rem; }
+.bzs-meta .sep { padding:0 6px; color:#bbb; }
+.bzs-side { flex:0 0 140px; }
+.bzs-price { font-weight:700; }
+.bzs-time { font-size:0.85rem; }
+
+/* Деталь */
+.bzs-detail .card-body img { border-radius:4px; }
+.bzs-sidebar .list-group-item {
+    font-size: 0.95rem;
+    padding: .55rem .75rem;
+    border-left: 3px solid transparent;
+}
+.bzs-sidebar .list-group-item.active {
+    background: #f1f5ff;
+    border-color: #0d6efd;
+    color: #0d6efd;
+    font-weight: 600;
+}
+@media (max-width: 991.98px){
+    /* на мобилке: сайдбар сверху, контент ниже — уже работает,
+       т.к. Bootstrap col-12 col-lg-3 → просто немного отступов */
+    .bzs-sidebar { margin-bottom: .5rem; }
+}
+.bzs-filterbar select,
+.bzs-filterbar input {
+    min-height: 32px;
+}

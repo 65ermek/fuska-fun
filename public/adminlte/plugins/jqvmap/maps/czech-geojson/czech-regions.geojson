@@ -1,0 +1,90 @@
+{
+  "type": "FeatureCollection",
+  "name": "cz_regions",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "CZ010",
+      "properties": { "name": "Praha" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    },
+    {
+      "type": "Feature",
+      "id": "CZ020",
+      "properties": { "name": "Středočeský kraj" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    },
+    {
+      "type": "Feature",
+      "id": "CZ031",
+      "properties": { "name": "Jihočeský kraj" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    },
+    {
+      "type": "Feature",
+      "id": "CZ032",
+      "properties": { "name": "Plzeňský kraj" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    },
+    {
+      "type": "Feature",
+      "id": "CZ041",
+      "properties": { "name": "Karlovarský kraj" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    },
+    {
+      "type": "Feature",
+      "id": "CZ042",
+      "properties": { "name": "Ústecký kraj" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    },
+    {
+      "type": "Feature",
+      "id": "CZ051",
+      "properties": { "name": "Liberecký kraj" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    },
+    {
+      "type": "Feature",
+      "id": "CZ052",
+      "properties": { "name": "Královéhradecký kraj" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    },
+    {
+      "type": "Feature",
+      "id": "CZ053",
+      "properties": { "name": "Pardubický kraj" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    },
+    {
+      "type": "Feature",
+      "id": "CZ063",
+      "properties": { "name": "Kraj Vysočina" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    },
+    {
+      "type": "Feature",
+      "id": "CZ064",
+      "properties": { "name": "Jihomoravský kraj" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    },
+    {
+      "type": "Feature",
+      "id": "CZ071",
+      "properties": { "name": "Olomoucký kraj" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    },
+    {
+      "type": "Feature",
+      "id": "CZ072",
+      "properties": { "name": "Zlínský kraj" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    },
+    {
+      "type": "Feature",
+      "id": "CZ080",
+      "properties": { "name": "Moravskoslezský kraj" },
+      "geometry": { "type": "MultiPolygon", "coordinates": [] }
+    }
+  ]
+}
